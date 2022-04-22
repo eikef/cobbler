@@ -135,7 +135,7 @@ schema = Schema(
         "default_template_type": str,
         "default_virt_bridge": str,
         Optional("default_virt_disk_driver", default="raw"): str,
-        "default_virt_file_size": int,
+        "default_virt_file_size": float,
         "default_virt_ram": int,
         "default_virt_type": str,
         "enable_ipxe": bool,
