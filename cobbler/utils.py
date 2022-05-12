@@ -552,12 +552,12 @@ def input_string_or_list(options: Optional[Union[str, list]]) -> Union[list, str
 
 def input_string_or_dict_no_inherit(
     options: Union[str, list, dict], allow_multiples=True
-) -> Union[str, Tuple[bool, dict]]:
+) -> Union[Tuple[bool, str], Tuple[bool, dict]]:
     """
     See :meth:`~cobbler.utils.input_string_or_dict`
     """
     if options == enums.VALUE_INHERITED:
-        return enums.VALUE_INHERITED
+        return True, enums.VALUE_INHERITED
     return input_string_or_dict(options, allow_multiples)
 
 

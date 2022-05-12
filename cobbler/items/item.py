@@ -388,7 +388,7 @@ class Item:
         :param options: The new kernel options as a space delimited list.
         :raises ValueError: In case the values set could not be parsed successfully.
         """
-        (success, value) = utils.input_string_or_dict(options, allow_multiples=True)
+        (success, value) = utils.input_string_or_dict_no_inherit(options, allow_multiples=True)
         if not success:
             raise ValueError("invalid kernel options")
         else:
@@ -414,7 +414,7 @@ class Item:
         :param options: The new kernel options as a space delimited list.
         :raises ValueError: In case the options could not be split successfully.
         """
-        (success, value) = utils.input_string_or_dict(options, allow_multiples=True)
+        (success, value) = utils.input_string_or_dict_no_inherit(options, allow_multiples=True)
         if not success:
             raise ValueError("invalid post kernel options")
         else:
@@ -441,7 +441,7 @@ class Item:
         :param options: The new options for the automatic installation meta options.
         :raises ValueError: If splitting the value does not succeed.
         """
-        (success, value) = utils.input_string_or_dict(options, allow_multiples=True)
+        (success, value) = utils.input_string_or_dict_no_inherit(options, allow_multiples=True)
         if not success:
             raise ValueError("invalid options given for autoinstall meta")
         else:
@@ -551,7 +551,7 @@ class Item:
 
         :param boot_files: The new value for the boot files used by the item.
         """
-        (success, value) = utils.input_string_or_dict(boot_files, allow_multiples=False)
+        (success, value) = utils.input_string_or_dict_no_inherit(boot_files, allow_multiples=False)
         if not success:
             raise TypeError("boot_files were handed wrong values")
         else:
@@ -577,7 +577,7 @@ class Item:
 
         :param fetchable_files: Files which will be made available to external users.
         """
-        (success, value) = utils.input_string_or_dict(fetchable_files, allow_multiples=False)
+        (success, value) = utils.input_string_or_dict_no_inherit(fetchable_files, allow_multiples=False)
         if not success:
             raise TypeError("fetchable_files were handed wrong values")
         else:
